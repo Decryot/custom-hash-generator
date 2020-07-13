@@ -10,7 +10,7 @@ letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","
 
 hash_test = []
 
-max_hash_letters = 6
+max_hash_letters = 10
 min_hash_letters = 3
 
 # creates a sequence of letters for each letter
@@ -74,11 +74,14 @@ def create_hash(can_save_hash):
         if can_save_hash:
             hash_test.append(new_hash)
 
-    #load_hash()
-    #save_hash()
-    #encrypt_word("hello")
+    if can_save_hash:
+        save_hash()
+    else:
+        load_hash()
 
-    word = decrypt_word("cf8frf9nmcf8")
-    print(word)
+    encrypt_word("hello")
+
+    #word = decrypt_word("cf8frf9nmcf8")
+    #print(word)
 
 create_hash(False)
