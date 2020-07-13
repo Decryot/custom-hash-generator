@@ -1,11 +1,14 @@
 import random
 
-# you can add more characters to further encrypt your hash
-letters = ["a","c","d","e","f","i","l","m","n","o","r","u"
+hash_letters = ["a","c","d","e","f","i","l","m","n","o","r","u"
+                ,"0","1","2","3","4","5","6","7","8","9"]
+
+letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
           ,"0","1","2","3","4","5","6","7","8","9"]
 
 hash_test = []
-max_hash_letters = 3
+
+max_hash_letters = 10
 min_hash_letters = 2
 
 # creates a sequence of letters for each letter
@@ -34,13 +37,13 @@ def create_hash():
         new_hash = ""
 
         for count in range(random_count_for_hash):
-            letter_id = random.randint(0,len(letters)-1)
-            new_hash += letters[letter_id]
+            letter_id = random.randint(0,len(hash_letters)-1)
+            new_hash += hash_letters[letter_id]
 
         hash_test.append(new_hash)
         print(new_hash + " " + letters[letter])
 
     save_hash()
-    encrypt_word("hello, what are you doing")
+    encrypt_word("hello")
 
 create_hash()
